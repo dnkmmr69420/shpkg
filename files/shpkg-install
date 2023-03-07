@@ -6,10 +6,14 @@ if [[ -f "~/.local/share/repos/$1/ui.sh" ]]
 then
     echo "running script"
     ~/.local/share/repos/$1/ui.sh
+    exit
 fi
 
 if [[ -f "/usr/local/share/repos/$1/ui.sh" ]]
 then
     echo "running script"
     /usr/local/share/repos/$1/ui.sh
+    exit
 fi
+
+echo "shpkg-install can't find the installation scripts"
