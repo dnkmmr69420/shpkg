@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo source /etc/shpkg.conf
+sudo source /etc/shpkg.conf
+sudo rm -r /usr/local/share/repos/$1
