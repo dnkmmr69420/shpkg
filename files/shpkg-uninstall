@@ -1,4 +1,19 @@
 #!/bin/bash
 source /etc/shpkg.conf
 source ~/.config/shpkg.conf
-~/.local/share/repos/$1/uui.sh
+
+if [[ -f "~/.local/share/repos/$1/uui.sh" ]]
+then
+    echo "running script"
+    ~/.local/share/repos/$1/uui.sh
+    exit
+fi
+
+if [[ -f "/usr/local/share/repos/$1/uui.sh" ]]
+then
+    echo "running script"
+    /usr/local/share/repos/$1/uui.sh
+    exit
+fi
+
+echo "shpkg can't find uninstallation scripts"
