@@ -1,4 +1,4 @@
 #!/bin/bash
-source /etc/shpkg.conf
-source /root/.config/shpkg.conf
+sudo source /etc/shpkg.conf
+sudo source /root/.config/shpkg.conf
 /usr/local/share/repos/$1/sui.sh
