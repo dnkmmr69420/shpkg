@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo source /etc/shpkg.conf
+sudo source /root/.config/shpkg.conf
+sudo /usr/local/share/repos/$1/si.sh
