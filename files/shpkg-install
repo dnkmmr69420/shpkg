@@ -1,4 +1,15 @@
 #!/bin.bash
 source /etc/shpkg.conf
 source ~/.config/shpkg.conf
+
+if [[ -f "~/.local/share/repos/$1/ui.sh" ]]
+then
+    ~/.local/share/repos/$1/ui.sh
+fi
 ~/.local/share/repos/$1/ui.sh
+
+
+if [[ -f "/usr/local/share/repos/$1/ui.sh" ]]
+then
+    /usr/local/share/repos/$1/ui.sh
+fi
