@@ -1,0 +1,4 @@
+#!/bin/bash
+source /etc/shpkg.conf
+source ~/.config/shpkg.conf
+git clone $1 ~/.local/share/repos
