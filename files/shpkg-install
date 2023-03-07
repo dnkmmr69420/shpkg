@@ -1,4 +1,4 @@
 #!/bin.bash
 source /etc/shpkg.conf
 source ~/.config/shpkg.conf
-$REPO_DIR/$1/ui.sh
+~/.local/share/repos/$1/ui.sh
