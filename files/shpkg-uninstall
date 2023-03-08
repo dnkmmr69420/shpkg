@@ -4,21 +4,21 @@ source ~/.config/shpkg.conf
 
 if (( $EUID == 0 )); then
     echo "running script"
-    sudo /usr/local/share/repos/$1/sui.sh
+    sudo /usr/local/share/repos/$1/$2/sui.sh
     exit
 fi
 
 if [[ -f "~/.local/share/repos/$1/uui.sh" ]]
 then
     echo "running script"
-    ~/.local/share/repos/$1/uui.sh
+    ~/.local/share/repos/$1/$2/uui.sh
     exit
 fi
 
 if [[ -f "/usr/local/share/repos/$1/uui.sh" ]]
 then
     echo "running script"
-    /usr/local/share/repos/$1/uui.sh
+    /usr/local/share/repos/$1/$2/uui.sh
     exit
 fi
 
