@@ -8,14 +8,14 @@ if (( $EUID == 0 )); then
     exit
 fi
 
-if [[ -f "~/.local/share/repos/$1/uui.sh" ]]
+if [[ -f "~/.local/share/repos/$1/$2/uui.sh" ]]
 then
     echo "running script"
     ~/.local/share/repos/$1/$2/uui.sh
     exit
 fi
 
-if [[ -f "/usr/local/share/repos/$1/uui.sh" ]]
+if [[ -f "/usr/local/share/repos/$1/$2/uui.sh" ]]
 then
     echo "running script"
     /usr/local/share/repos/$1/$2/uui.sh
