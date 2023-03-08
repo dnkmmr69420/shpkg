@@ -2,6 +2,12 @@
 source /etc/shpkg.conf
 source ~/.config/shpkg.conf
 
+if (( $EUID == 0 )); then
+    echo "running script as root"
+    sudo /usr/local/share/repos/$1/si.sh
+    exit
+fi
+
 if [[ -f "~/.local/share/repos/$1/ui.sh" ]]
 then
     echo "running script"
