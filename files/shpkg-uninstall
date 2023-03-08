@@ -4,7 +4,7 @@ source ~/.config/shpkg.conf
 
 if (( $EUID == 0 )); then
     echo "running script"
-    /usr/local/share/repos/$1/sui.sh
+    sudo /usr/local/share/repos/$1/sui.sh
     exit
 fi
 
