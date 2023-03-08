@@ -2,23 +2,27 @@
 source /etc/shpkg.conf
 source ~/.config/shpkg.conf
 
+USERUNINSTALLER=~/.local/share/repos/$1/$2/uui.sh
+SYSTEMWIDEUNINSTALLER=/usr/local/share/repos/$1/$2/uui.sh
+ROOTUNINSTALLER=/usr/local/share/repos/$1/$2/sui.sh
+
 if (( $EUID == 0 )); then
     echo "running script"
-    sudo /usr/local/share/repos/$1/$2/sui.sh
+    sudo source /usr/local/share/repos/$1/$2/sui.sh
     exit
 fi
 
-if [[ -f "~/.local/share/repos/$1/$2/uui.sh" ]]
+if [[ -f "$USERUNINSTALLER" ]]
 then
     echo "running script"
-    ~/.local/share/repos/$1/$2/uui.sh
+    source ~/.local/share/repos/$1/$2/uui.sh
     exit
 fi
 
-if [[ -f "/usr/local/share/repos/$1/$2/uui.sh" ]]
+if [[ -f "$SYSTEMWIDEUNINSTALLER" ]]
 then
     echo "running script"
-    /usr/local/share/repos/$1/$2/uui.sh
+    source /usr/local/share/repos/$1/$2/uui.sh
     exit
 fi
 
