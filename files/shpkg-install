@@ -2,20 +2,24 @@
 source /etc/shpkg.conf
 source ~/.config/shpkg.conf
 
+USERINSTALLER=~/.local/share/repos/$1/$2/ui.sh
+SYSTEMWIDEINSTALLER=/usr/local/share/repos/$1/$2/ui.sh
+ROOTINSTALLER=/usr/local/share/repos/$1/$2/si.sh
+
 if (( $EUID == 0 )); then
     echo "running script as root"
     sudo /usr/local/share/repos/$1/$2/si.sh
     exit
 fi
 
-if [[ -f "~/.local/share/repos/$1/$2/ui.sh" ]]
+if [[ -f "$USERINSTALLER" ]]
 then
     echo "running script"
     ~/.local/share/repos/$1/$2/ui.sh
     exit
 fi
 
-if [[ -f "/usr/local/share/repos/$1/$2/ui.sh" ]]
+if [[ -f "$SYSTEMWIDEINSTALLER" ]]
 then
     echo "running script"
     /usr/local/share/repos/$1/$2/ui.sh
