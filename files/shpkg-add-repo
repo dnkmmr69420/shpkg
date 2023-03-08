@@ -4,6 +4,7 @@ source ~/.config/shpkg.conf
 
 if (( $EUID == 0 )); then
     sudo git clone $1 /usr/local/share/repos
+    exit
 fi
 
 git clone $1 ~/.local/share/repos
