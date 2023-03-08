@@ -8,21 +8,21 @@ ROOTINSTALLER=/usr/local/share/repos/$1/$2/si.sh
 
 if (( $EUID == 0 )); then
     echo "running script as root"
-    sudo /usr/local/share/repos/$1/$2/si.sh
+    sudo source /usr/local/share/repos/$1/$2/si.sh
     exit
 fi
 
 if [[ -f "$USERINSTALLER" ]]
 then
     echo "running script"
-    ~/.local/share/repos/$1/$2/ui.sh
+    source ~/.local/share/repos/$1/$2/ui.sh
     exit
 fi
 
 if [[ -f "$SYSTEMWIDEINSTALLER" ]]
 then
     echo "running script"
-    /usr/local/share/repos/$1/$2/ui.sh
+    source /usr/local/share/repos/$1/$2/ui.sh
     exit
 fi
 
