@@ -2,6 +2,12 @@ This is a program that lets you access a repo for shell scripts that install pro
 
 [Hub Link](https://github.com/dnkmmr69420/shpkg-hub)
 
+to add the repo type
+
+```bash
+shpkg-add-repo shpkg-hub https://github.com/dnkmmr69420/shpkg-hub.git
+```
+
 # Scripts 
 
 ## User wide scripts
