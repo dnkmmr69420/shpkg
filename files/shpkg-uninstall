@@ -2,6 +2,11 @@
 source /etc/shpkg.conf
 source ~/.config/shpkg.conf
 
+if (( $EUID == 0 )); then
+    echo "running script"
+    /usr/local/share/repos/$1/sui.sh
+fi
+
 if [[ -f "~/.local/share/repos/$1/uui.sh" ]]
 then
     echo "running script"
